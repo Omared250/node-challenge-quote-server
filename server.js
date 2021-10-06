@@ -1,4 +1,5 @@
-const { response } = require("express");
+const { response, request } = require("express");
+const quotesObject = require('./quotes.json')
 // server.js
 // This is where your node app starts
 
@@ -18,6 +19,21 @@ app.get("/", function (request, response) {
 });
 
 //START OF YOUR CODE...
+
+// making '/quotes' functional
+const quotesInf = (request, response) => {
+  response.send(quotesObject)
+}
+
+app.get("/quotes", quotesInf )
+
+// making '/quotes/random' functional
+
+const randomQuotes = (request, response) => {
+  response.send(pickFromArray(quotesObject))
+}
+
+app.get("/quotes/random", randomQuotes)
 
 //...END OF YOUR CODE
 
