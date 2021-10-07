@@ -7,9 +7,6 @@ const quotesObject = require('./quotes.json')
 const express = require("express");
 const app = express();
 
-//load the quotes JSON
-const quotes = require("./quotes.json");
-
 // Now register handlers for some routes:
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
@@ -34,6 +31,25 @@ const randomQuotes = (request, response) => {
 }
 
 app.get("/quotes/random", randomQuotes)
+
+// making '/quotes/search' functional
+
+const searchQuotes = (request, response) => {
+  const filteredByTerm = request.query.term;
+  if (filteredByTerm) {
+    const termsArray = quotesObject.filter((word) => {
+      return (
+        word.quote.toLowerCase().includes(filteredByTerm.toLowerCase()) ||
+        word.author.toLowerCase().includes(filteredByTerm.toLowerCase())
+      )
+    })
+    response.send(termsArray)
+  } else {
+    response.send(quotesObject)
+  }
+}
+
+app.get("/quotes/search/", searchQuotes)
 
 //...END OF YOUR CODE
 
