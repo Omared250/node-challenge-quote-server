@@ -22,15 +22,11 @@ const quotesInf = (request, response) => {
   response.send(quotesObject)
 }
 
-app.get("/quotes", quotesInf )
-
 // making '/quotes/random' functional
 
 const randomQuotes = (request, response) => {
   response.send(pickFromArray(quotesObject))
 }
-
-app.get("/quotes/random", randomQuotes)
 
 // making '/quotes/search' functional
 
@@ -49,6 +45,8 @@ const searchQuotes = (request, response) => {
   }
 }
 
+app.get("/quotes", quotesInf )
+app.get("/quotes/random", randomQuotes)
 app.get("/quotes/search/", searchQuotes)
 
 //...END OF YOUR CODE
