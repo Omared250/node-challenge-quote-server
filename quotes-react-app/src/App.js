@@ -3,7 +3,7 @@ import Quotes from './components/Quotes';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App d-flex flex-column">
       <Quotes/>
     </div>
   );

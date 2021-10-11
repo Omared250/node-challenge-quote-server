@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
 .App {
   text-align: center;
+  width: 40%;
+  margin: 10em 30%;
 }
 
 .App-logo {
@@ -35,4 +39,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.quote-container {
+  width: 100%;
+  background-color: rgb(216, 216, 215);
+  font-family: 'Dancing Script', cursive;
+  border: black solid 1px;
+  border-radius: 10px;
+  margin-bottom: 2em;
+  padding: 2em;
+  font-size: 25px;
 }

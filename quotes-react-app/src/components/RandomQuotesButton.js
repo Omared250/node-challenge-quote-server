@@ -3,7 +3,7 @@ import React from "react";
 const RandomQuotesButton = (props) => {
     return (
         <div>
-            <button className='btn btn-primary' onClick={props.handler}>Change Quote</button>
+            <button className='btn btn-dark' onClick={props.handler}>Quote!</button>
         </div>
     );
 }

@@ -16,7 +16,7 @@ const Quotes = () => {
     const GettingQuotes = () => {
         if (quotes) {
             return (
-                <div>
+                <div className='quote-container'>
                     <p>{quotes.quote}</p>
                     <p>{quotes.author}</p>
                 </div>
