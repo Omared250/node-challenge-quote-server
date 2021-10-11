@@ -1,5 +1,6 @@
 const { response, request } = require("express");
 const quotesObject = require('./quotes.json')
+const lodash = require('lodash');
 // server.js
 // This is where your node app starts
 
@@ -25,7 +26,7 @@ const quotesInf = (request, response) => {
 // making '/quotes/random' functional
 
 const randomQuotes = (request, response) => {
-  response.send(pickFromArray(quotesObject))
+  response.send(lodash.sample(quotesObject))
 }
 
 // making '/quotes/search' functional
@@ -55,9 +56,9 @@ app.get("/quotes/search/", searchQuotes)
 //example: pickFromArray([1,2,3,4]), or
 //example: pickFromArray(myContactsArray)
 //
-function pickFromArray(arr) {
-  return arr[Math.floor(Math.random() * arr.length)];
-}
+// function pickFromArray(arr) {
+//   return arr[Math.floor(Math.random() * arr.length)];
+// }
 
 //Start our server so that it listens for HTTP requests!
 let port = 5000;
