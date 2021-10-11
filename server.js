@@ -1,6 +1,7 @@
 const { response, request } = require("express");
-const quotesObject = require('./quotes.json')
+const quotesObject = require('./quotes.json');
 const lodash = require('lodash');
+const cors = require('cors');
 // server.js
 // This is where your node app starts
 
