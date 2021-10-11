@@ -13,6 +13,7 @@ const app = express();
 //   /                  - Return some helpful welcome info (text)
 //   /quotes            - Should return all quotes (json)
 //   /quotes/random     - Should return ONE quote (json)
+app.use(cors())
 app.get("/", function (request, response) {
   response.send("Neill's Quote Server!  Ask me for /quotes/random, or /quotes");
 });
@@ -67,3 +68,4 @@ let port = 5000;
 app.listen( port, function () {
   console.log("Your app is listening on port " + port);
 });
+
